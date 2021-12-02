@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_list_view_sample/product_name_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,12 +8,24 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _controller = PageController(
+      initialPage: 0,
+      keepPage: true,
+    );
+    final _pageView = PageView(
+      controller: _controller,
+      children: [
+        CartCheck(),
+        ProductNamePage(),
+      ],
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CartCheck(),
+      home: _pageView,
     );
   }
 }
