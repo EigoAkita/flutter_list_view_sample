@@ -10,7 +10,6 @@ class ProductNamePage extends StatelessWidget {
       color: Colors.black,
       fontWeight: FontWeight.w500,
     );
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product Name'),
@@ -23,7 +22,7 @@ class ProductNamePage extends StatelessWidget {
             ///TODO:Hiroki君に教えるコードここから
             Container(
               width: _size.width * 0.95,
-              height: _size.height * 0.305,
+              height: _size.height * 0.350,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.black,

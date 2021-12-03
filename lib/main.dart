@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_list_view_sample/Widgets/product_name.dart';
 import 'package:flutter_list_view_sample/product_name_page.dart';
 
 void main() {
@@ -42,6 +43,12 @@ class CartCheck extends StatefulWidget {
 class _CartCheckState extends State<CartCheck> {
   @override
   Widget build(BuildContext context) {
+    // final _size = MediaQuery.of(context).size;
+    final _productStyle = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w500,
+    );
+
     List<String> list = [
       "meat",
       "detergent",
@@ -58,18 +65,25 @@ class _CartCheckState extends State<CartCheck> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            ListView.builder(
-              padding: EdgeInsets.only(
-                bottom: 30,
+            GridView.builder(
+              padding: EdgeInsets.all(
+                10,
               ),
               itemBuilder: (BuildContext context, int index) {
-                return _messageItem(
-                  list[index],
+                return productName(
+                  text: list[index],
+                  // size: _size,
+                  textStyle: _productStyle,
                 );
               },
               itemCount: list.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 20,
+              ),
             ),
           ],
         ),
