@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_list_view_sample/Widgets/product_name.dart';
+import 'package:flutter_list_view_sample/alcohol_category_page.dart';
 import 'package:flutter_list_view_sample/product_name_page.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       children: [
         CartCheck(),
         ProductNamePage(),
+        AlcoholCategoryPage(),
       ],
     );
 
